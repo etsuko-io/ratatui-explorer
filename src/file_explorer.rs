@@ -188,16 +188,12 @@ impl FileExplorer {
 
         match input {
             Input::Up => {
-                if self.selected == 0 {
-                    self.selected = self.files.len() - 1;
-                } else {
+                if self.selected != 0 {
                     self.selected -= 1;
                 }
             }
             Input::Down => {
-                if self.selected == self.files.len() - 1 {
-                    self.selected = 0;
-                } else {
+                if self.selected != self.files.len() - 1 {
                     self.selected += 1;
                 }
             }
